@@ -28,18 +28,30 @@
  1. go to your web server config and prevent it from caching its data
     1. If you are using apache, go to your httpd.conf and write 
     > LoadModule headers_module modules/mod_headers.so
+    
     > //If you have this already, then, just write the next part
-    > 
+    
+    
     > <Directory yourdirectory(usually it is /)>
+    
     >   <filesMatch "\.(html|htm|js|css)$">
+    
     >   FileETag None
+    
     >       <ifModule mod_headers.c>
+    
     >       Header unset ETag
+    
     >       Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    
     >       Header set Pragma "no-cache"
+    
     >       Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+    
     >       </ifModule>
+    
     >   </filesMatch>
+    
     > </Directory>
       
     1. If you are using lighttpd, then.. (NOT TESTED)
@@ -56,18 +68,31 @@
  1. go to your web server config and prevent it from caching its data
     1. If you are using apache, go to your httpd.conf and write 
     > LoadModule headers_module modules/mod_headers.so
+    
     > //If you have this already, then, just write the next part
+    
     > 
+    
     > <Directory yourdirectory(usually it is /)>
+    
     >   <filesMatch "\.(html|htm|js|css)$">
+    
     >   FileETag None
+    
     >       <ifModule mod_headers.c>
+    
     >       Header unset ETag
+    
     >       Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    
     >       Header set Pragma "no-cache"
+    
     >       Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+    
     >       </ifModule>
+    
     >  </filesMatch>
+    
     > </Directory>
       
     1. If you are using lighttpd, then.. (NOT TESTED)
@@ -101,19 +126,32 @@
  1. 캐싱을 막기위해 서버의 config를 수정해 줍니다
     1. apache서버(xampp) 는 httpd.conf에 
     > LoadModule headers_module modules/mod_headers.so
+    
     > //이 로드 모듈이 이미 있으면 패스
-    > 
+    
+    
     > <Directory yourdirectory(usually it is /)>
+    
     >   <filesMatch "\.(html|htm|js|css)$">
+    
     >   FileETag None
+    
     >       <ifModule mod_headers.c>
+    
     >       Header unset ETag
+    
     >      Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    
     >       Header set Pragma "no-cache"
+    
     >       Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+    
     >       </ifModule>
+    
     >   </filesMatch>
+    
     > </Directory>
+    
       
     1. lighttpd 쓰신다면, (시험해보지 않음)
     > server.stat-cache-engine = "disable'
@@ -128,18 +166,30 @@
  1. 캐싱을 막기위해 서버의 config를 수정해 줍니다
     1. apache서버(xampp) 는 httpd.conf에 
     > LoadModule headers_module modules/mod_headers.so
+    
     > //이 로드 모듈이 이미 있으면 패스
+    
     > 
     > <Directory yourdirectory(usually it is /)>
+    
     >   <filesMatch "\.(html|htm|js|css)$">
+    
     >   FileETag None
+    
     >       <ifModule mod_headers.c>
+    
     >       Header unset ETag
+    
     >       Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    
     >       Header set Pragma "no-cache"
+    
     >       Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+    
     >       </ifModule>
+    
     >   </filesMatch>
+    
     > </Directory>
       
     1. lighttpd 쓰신다면, (시험해보지 않음)
