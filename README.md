@@ -59,7 +59,7 @@
  1. go into your web server directory and put it everything in the directory (It is OK to use inside another directory since The Code itself is using relative path)
  1. go to your web server config and prevent it from caching its data
     1. If you are using apache, go to your httpd.conf and write 
-   ```
+    ```
     LoadModule headers_module modules/mod_headers.so
     #If you have this already, then, just write the next part
      <Directory yourdirectory(usually it is /)>
@@ -107,7 +107,7 @@
  1. 웹서버 디렉토리로 (xampp라면, "설치 경로/htdocs/") 이동하여 모든 파일들을 옮겨 줍니다. (그 아래에 폴더 만들어서 그 안에 복사해도 됩니다 (상대경로 사용))
  1. 캐싱을 막기위해 서버의 config를 수정해 줍니다
     1. apache서버(xampp) 는 httpd.conf에 
-     ```
+    ```
     LoadModule headers_module modules/mod_headers.so
     #If you have this already, then, just write the next part
      <Directory yourdirectory(usually it is /)>
@@ -138,7 +138,7 @@
  1. 웹서버 디렉토리로 (대개 /var/www/html/) 이동해 모든 파일을 옮겨 줍니다! (그 아래에 폴더 만들어서 그 안에 복사해도 됩니다 (상대경로 사용))
  1. 캐싱을 막기위해 서버의 config를 수정해 줍니다
     1. apache서버(xampp) 는 httpd.conf에 
-     ```
+    ```
     LoadModule headers_module modules/mod_headers.so
     #If you have this already, then, just write the next part
      <Directory yourdirectory(usually it is /)>
@@ -156,7 +156,7 @@
     
       
     1. lighttpd 쓰신다면, (시험해보지 않음)
-   ```
+    ```
     server.stat-cache-engine = "disable'
     server.network-backend = "writev" 
     ```
