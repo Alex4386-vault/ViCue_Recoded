@@ -84,7 +84,7 @@
  1. Go and use it!
  
 ### License
- The source code is distributed under [Apache License 2.0]("https://github.com/0xEBB095EC8381ED9DAC/ViCue6/blob/master/LICENSE")
+ The source code is distributed under [Apache License 2.0](https://github.com/0xEBB095EC8381ED9DAC/ViCue6/blob/master/LICENSE)
  
  
 ## 한국어
@@ -164,4 +164,4 @@
  1. 자 이제 쓰세요!
  
 ### License
- 이 소스코드는 [Apache License 2.0]("https://github.com/0xEBB095EC8381ED9DAC/ViCue6/blob/master/LICENSE")에 의거해 배포되고 있습니다.
+ 이 소스코드는 [Apache License 2.0](https://github.com/0xEBB095EC8381ED9DAC/ViCue6/blob/master/LICENSE)에 의거해 배포되고 있습니다.
