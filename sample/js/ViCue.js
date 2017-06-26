@@ -35,6 +35,9 @@ function refresh_all_data() {
 	$("#currentnumber").load("../data/currentnumber.html");
 	$("#notice").load("../data/message.html");
 	$("#debug_countdown").load("../data/countdown.html");
+	$("#debug_timermin").load("../data/timer/min.html");
+	$("#debug_timersec").load("../data/timer/sec.html");
+	
 	
 }
 
