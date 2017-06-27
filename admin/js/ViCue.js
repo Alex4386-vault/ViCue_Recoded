@@ -35,11 +35,21 @@ function refresh_all_data() {
 	$("#currentnumber").load("../data/currentnumber.html");
 	$("#notice").load("../data/message.html");
 	$("#debug_countdown").load("../data/countdown.html");
+	
+	$("#debug_timermin").load("../data/timer/min.html");
+	$("#debug_timersec").load("../data/timer/sec.html");
+	
 	placeholder_updater();
 }
 
 function placeholder_updater() {
 	var cue_num = document.getElementById("currentnumber").innerHTML;
+	if(cue_num == 99)
+	{
+		$("#easteregg").show();
+	} else {
+		$("#easteregg").hide();
+	}
 	document.getElementById('current_number_text').getAttributeNode("placeholder").value = cue_num;
 	var current_queue = document.getElementById("nowplaying").innerHTML;
 	document.getElementById('current_text').getAttributeNode("placeholder").value = current_queue;
@@ -128,6 +138,77 @@ function change_status_style() {
 		s_obj.style.lineHeight="100px";
 		ref_all = setInterval(function(){ refresh_all_data() }, 2500);
 	}
+}
+
+function calcTime(minutes, seconds) {
+	var days = 0;
+	var hours = 0;
+	
+	//Error Handling
+	
+	
+	//Error Handling Finished
+	
+	
+	var today_countdown = new Date();
+	if(today_countdown.getMonth()<9)
+	{
+	var date = today_countdown.getFullYear()+'-0'+(today_countdown.getMonth()+1)+'-'+today_countdown.getDate();
+	} else {
+	var date = today_countdown.getFullYear()+'-'+(today_countdown.getMonth()+1)+'-'+today_countdown.getDate();
+	}
+	
+	var hours_now = today_countdown.getHours();
+	var minutes_now = today_countdown.getMinutes();
+	var seconds_now = today_countdown.getSeconds();
+	
+	if(seconds >= 60)
+	{
+		minutes = minutes + Math.floor(seconds / 60);
+		seconds = seconds % 60;
+	}
+	
+	if(minutes >= 60)
+	{
+		hours = Math.floor(minutes / 60);
+		minutes = minutes % 60;
+	}
+	
+	if(hours >= 24)
+	{
+		hours = hours-24;
+	}
+	
+	
+	var hours_set = hours_now + hours;
+	var minutes_set = minutes_now + minutes;
+	var seconds_set = seconds_now + seconds;
+	
+	if(seconds_set >= 60)
+	{
+		minutes_set = minutes_set + Math.floor(seconds / 60);
+		seconds_set = seconds % 60;
+	}
+	
+	if(minutes_set >= 60)
+	{
+		hours_set = Math.floor(minutes_set / 60);
+		minutes = minutes % 60;
+	}
+	
+	if(hours_set >= 24)
+	{
+		hours_set = hours-24;
+	}
+	
+	
+	var time = (hours_set) + ":" + (minutes_set) + ":" + (seconds_set);
+	
+	
+	var dateTime = date+'T'+time+'+09:00';
+	
+	
+    document.getElementById("countdown_destination").value = dateTime;
 }
 
 function countdown() {
