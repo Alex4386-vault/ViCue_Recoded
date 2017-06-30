@@ -200,6 +200,21 @@ function calcTime(minutes, seconds) {
 	{
 		hours_set = hours-24;
 	}
+		
+	if(hours_set < 10)
+ {
+   var hours_set = "0" + hours_set;
+ }
+
+	if(minutes_set < 10)
+ {
+   var minute_set = "0" + minutes_set;
+ }
+
+	if(seconds_set < 10)
+ {
+   var seconds_set = "0" + seconds_set;
+ }
 	
 	
 	var time = (hours_set) + ":" + (minutes_set) + ":" + (seconds_set);
