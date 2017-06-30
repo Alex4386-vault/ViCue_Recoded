@@ -58,7 +58,7 @@
 		{
 			echo ("second value not found!!!<br>");
 			echo ("Setting value to 0<br>");
-			$min = ("00");
+			$sec = ("00");
 		}
 	
 //check if xss
