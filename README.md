@@ -3,10 +3,8 @@
  - Special Thanks to...
     * [YHSSC 너섬학생회](https://www.facebook.com/yhssc/)
     * Sean Kim for the CONCEPT OF THIS IDEA (NONE OF HIS SOURCES INCLUDED)
-   
-    * jQuery and Zurb for awesome javascript frameworks!
-    
-    * ~~(In Development) CKEditor for easier Notice Editing~~
+    * jQuery and Zurb for awesome javascript frameworks!
+    * ~~(In Development) CKEditor for easier Notice Editing~~
  - Languages
 	* [English](#english)
 	* [한국어](#한국어)
