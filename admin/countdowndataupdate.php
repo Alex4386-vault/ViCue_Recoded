@@ -6,10 +6,10 @@
 <!--
 <meta http-equiv="refresh" content="1;url=index.html" />
 -->
-
+<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
 </head>
 
-<body style="background-color:#242424 !important; color:#FFF">
+<body style="background-color:#242424 !important; color:#FFF; font-family: 'Noto Sans KR', sans-serif;">
 	Loading PHP binaries..... <br>
 	
 	<p><h1><strong>Welcome to ViCue 6.0 debug zone....</strong></h1></p>

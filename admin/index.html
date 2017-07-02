@@ -8,7 +8,7 @@
     <script src="../js/jquery.js"></script>
 	<script src="../js/vendor/foundation.js"></script>
     <script src="../js/vendor/what-input.js"></script>
-    
+    <script src="../ckeditor/ckeditor.js"></script>
     <meta name="viewport" content="width=600px">
 </head>
 
@@ -103,7 +103,7 @@
 	<div class="row">
 		<div class="columns" align="center" style="color:#FFFFFF; padding-top:6px">
 			공지사항
-			<div id="notice" align="center" style="width: 100%; background-color: #333 !important; text-align: center !important;line-height: 50px;font-size: 20pt;padding:10px">Loading...</div>
+			<div id="notice" align="center" style="width: 100%; background-color: #333 !important; text-align: center !important;line-height: 25pt;font-size: 20pt;padding:10px">Loading...</div>
 		</div>
 	</div>
 	
@@ -157,16 +157,25 @@
 				function rdyblink()
 				{
 					document.getElementById('cue_new').value="ready_blink";	
+document.getElementById("countdown_destination").value = dateTime;
+
 				}
 				
 				function rdy()
 				{
 					document.getElementById('cue_new').value="ready";
+document.getElementById("countdown_destination").value = dateTime;
+
+
 				}
 				
 				function stby()
 				{
 					document.getElementById('cue_new').value="standby";
+document.getElementById("countdown_destination").value = dateTime;
+
+
+
 				}
 				
 				function go_wocountdown()
@@ -190,19 +199,19 @@
 			</script>
 			</form>
 			
-			<div class="row">
+			<div class="row columns">
 			타이머<br />
 			<form id="set_timer" action="settimer.php" method="post" target="_blank">
-     			<div class="medium-6 columns">
+     			<div class="medium-6">
       				<label style="color:darkgray">
-						분
-     				   <input type="text" placeholder="타이머 분" name="timer_min" id="timer_min">
+				분
+     				   <input type="number" placeholder="타이머 분" name="timer_min" id="timer_min">
      				</label>
 				</div>
-				<div class="medium-6 columns">
+				<div class="medium-6">
       				<label style="color:darkgray">
-						초
-     				   <input type="text" placeholder="타이머 초" name="timer_sec" id="timer_sec">
+				초
+     				   <input type="number" placeholder="타이머 초" name="timer_sec" id="timer_sec">
      				</label>
 				</div>
 				<input type="submit" class="alert button">
@@ -266,7 +275,7 @@
 			<form id="notice_update" action="noticedataupdate.php" method="post" target="_blank">
      		<label style="color:darkgray">
  			 공지사항  (최대 4줄이 적당합니다)
-			 <textarea placeholder="공지사항을 안내합니다" name="message" id="message_text"></textarea>
+			 <p><textarea placeholder="공지사항을 안내합니다" name="message" id="message_text"></textarea></p>
 			</label>
 			<input type="submit" class="alert button"></input>
 			<button type="button" href="#features" class="secondary button">Clear</button>
@@ -324,7 +333,32 @@
 	<script>
 		var cue_data = document.getElementById("debug_cue").innerHTML;	
 		document.getElementById('cue_new').getAttributeNode("placeholder").value = cue_data;
-		countdown();
+                CKEDITOR.replace( 'message_text' , {
+        enterMode : CKEDITOR.ENTER_BR,
+        shiftEnterMode: CKEDITOR.ENTER_P,
+        toolbarGroups: [
+		{ name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+		{ name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+		{ name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+		{ name: 'forms', groups: [ 'forms' ] },
+		'/',
+		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+		{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+		{ name: 'links', groups: [ 'links' ] },
+		{ name: 'insert', groups: [ 'insert' ] },
+		'/',
+		{ name: 'styles', groups: [ 'styles' ] },
+		{ name: 'colors', groups: [ 'colors' ] },
+		{ name: 'tools', groups: [ 'tools' ] },
+		{ name: 'others', groups: [ 'others' ] },
+		{ name: 'about', groups: [ 'about' ] }
+	],
+        removeButtons: 'Save,Form,Checkbox,HiddenField,ImageButton,Radio,TextField,Textarea,Select,Button,Flash,HorizontalRule,PageBreak,Iframe',
+        
+    });
+       countdown();
+
+
 	</script>
 
 			

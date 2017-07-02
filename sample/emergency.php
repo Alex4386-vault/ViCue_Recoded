@@ -41,7 +41,7 @@
 		
 		echo("starting to write new value at queue<br>");
 		$emergency_cue = ("emergency");
-		$emergency_notice = ("<b>비상!</b> <b>샘플 구역</b>에서<br> 비상 사태가 발생하였습니다!!");
+		$emergency_notice = ("<strong><span style=\"color:#e74c3c\">비상! </span>Sample 구역</strong>에서&nbsp;<br />비상사태가 발생했습니다!");
 		
 		fwrite($filewrite1, $emergency_notice);
 		echo ("<br><br>current notice <b>");
