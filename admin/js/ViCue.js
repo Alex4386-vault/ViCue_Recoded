@@ -149,13 +149,22 @@ function calcTime(minutes, seconds) {
 	
 	//Error Handling Finished
 	
-	
+
 	var today_countdown = new Date();
+
+var date_set = today_countdown.getDate();
+	
+if(date_set<10)
+{
+    var date_set = "0" + date_set;
+}
+
+
 	if(today_countdown.getMonth()<9)
 	{
-	var date = today_countdown.getFullYear()+'-0'+(today_countdown.getMonth()+1)+'-'+today_countdown.getDate();
+	var date = today_countdown.getFullYear()+'-0'+(today_countdown.getMonth()+1)+'-'+(date_set);
 	} else {
-	var date = today_countdown.getFullYear()+'-'+(today_countdown.getMonth()+1)+'-'+today_countdown.getDate();
+	var date = today_countdown.getFullYear()+'-'+(today_countdown.getMonth()+1)+'-'+(date_set);
 	}
 	
 	var hours_now = today_countdown.getHours();
@@ -187,18 +196,18 @@ function calcTime(minutes, seconds) {
 	if(seconds_set >= 60)
 	{
 		minutes_set = minutes_set + Math.floor(seconds / 60);
-		seconds_set = seconds % 60;
+		seconds_set = seconds_set % 60;
 	}
 	
 	if(minutes_set >= 60)
 	{
-		hours_set = Math.floor(minutes_set / 60);
-		minutes = minutes % 60;
+		hours_set = hours_set + Math.floor(minutes_set / 60);
+		minutes_set = minutes_set % 60;
 	}
 	
 	if(hours_set >= 24)
 	{
-		hours_set = hours-24;
+		hours_set = hours_set - 24;
 	}
 		
 	if(hours_set < 10)
@@ -208,7 +217,7 @@ function calcTime(minutes, seconds) {
 
 	if(minutes_set < 10)
  {
-   var minute_set = "0" + minutes_set;
+   var minutes_set = "0" + minutes_set;
  }
 
 	if(seconds_set < 10)

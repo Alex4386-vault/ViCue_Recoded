@@ -1,17 +1,112 @@
-<!doctype html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>ViCue 6.0 - Sample Location</title>
-	<link rel="stylesheet" href="../css/foundation.css">
-    <link rel="stylesheet" href="../css/app.css">
+    <meta charset=utf-8>
+    <title>ViCue 6.0 - Sample Location</title>
+    <link rel=stylesheet href=../css/foundation.css>
+    <link rel=stylesheet href=../css/app.css>
     <script src="../js/jquery.js"></script>
-	<script src="../js/vendor/foundation.js"></script>
+    <script src="../js/vendor/foundation.js"></script>
     <script src="../js/vendor/what-input.js"></script>
-    
-    <meta name="viewport" content="width=600px">
+    <meta name=viewport content=width=600px>
 </head>
 
+<<<<<<< HEAD
+<body style="background-color:#242424 !important;" onLoad="responsive_menu(); refresh_all_data_root();" onresize=responsive_menu();>
+    <div class=off-canvas-wrapper style="background:#454545 !important;">
+        <div class="off-canvas position-left" id=offCanvasLeft data-off-canvas data-position=left style="background:#454545 !important;">
+            <button class=close-button aria-label="Close menu" type=button data-close> <span aria-hidden=true style=color:#FFF>&times;</span> </button>
+            <ul class="mobile-ofc vertical menu" style=color:#FFF>
+                <p>&nbsp;</p>
+                <ul class="vertical menu" data-accordion-menu>
+                    <li><a href=#><B>로그인</B></a>
+                        <ul class="menu vertical nested">
+                            <li><a href=../standby/index.html>대기실</a></li>
+                            <li><a href=../prep/index.html>준비실</a></li>
+                            <li><a href=../cast/index.html>방송실</a></li>
+                            <li><a href=../stage/index.html>무대</a></li>
+                        </ul>
+                    </li>
+                    <br />
+                    <li><a href=../admin/index.html>ADMIN</a></li>
+                    <br />
+                    <br />
+                    <br />
+                    <form id=emergency_sidebar action=emergency.php method=post>
+                        <li>
+                            <button style="padding:5px; margin-left:15px" class="alert button">EMERGENCY</button>
+                        </li>
+                    </form>
+                </ul>
+            </ul>
+        </div>
+    </div>
+    <br />
+    <div class=row>
+        <div class="small-12 columns" style=padding-bottom:10px>
+            <div style=padding:10px;text-align:left;width:100%;background:#454545;color:#FFF>
+                <button class=menu-icon type=button data-open=offCanvasLeft></button>&nbsp;&nbsp;&nbsp; <span id=event_name>Loading...</span> - ViCue 6.0 Beta - Sample Location - <span id=clock>Current Time</span></div>
+        </div>
+    </div>
+    <div class=row>
+        <div class="small-9 columns" align=center style="color:#FFFFFF; padding-top:6px">Cue
+            <B><div class=cue id=cue align=center style="width: 100%; background-color: #333 !important; height: 100px; text-align: center !important; line-height: 100px; font-size: 32pt;">Loading...</div></B>
+        </div>
+        <div class="small-3 columns" align=center style="color:#FFFFFF; padding-top:6px">남은 시각
+            <div id=countdown align=center style="width: 100%; background-color: #333 !important; height: 100px; text-align: center !important;line-height: 50px;font-size: 15pt;">Loading...</div>
+        </div>
+    </div>
+    <br>
+    <div class=row>
+        <div class="small-4 columns" align=center style=color:#FFFFFF;>현재 진행중
+            <div id=nowplaying align=center style="width: 100%; background-color: #333 !important; height: 100px; text-align: center !important; line-height: 30px; padding:10px; font-size: 21px; word-break:break-all;">Loading...</div>
+        </div>
+        <div class="small-4 columns" align=center style=color:#FFFFFF;>다음 순서
+            <div id=commingup align=center style="width: 100%; background-color: #333 !important; height: 100px; text-align: center !important; line-height: 30px; padding:10px; font-size: 21px; word-break:break-all;">Loading...</div>
+        </div>
+        <div class="small-4 columns" align=center style=color:#FFFFFF;>순번
+            <div id=currentnumber align=center style="width: 100%; background-color: #333 !important; height: 100px; text-align: center !important;line-height: 100px;font-size: 20pt;">Loading...</div>
+        </div>
+    </div>
+    <br>
+    <div class=row>
+        <div class="small-12 columns" align=center style="color:#FFFFFF; padding-top:6px">공지사항
+            <div id=notice align=center style="width: 100%; background-color: #333 !important; text-align: center !important;line-height: 50px;font-size: 20pt;padding:10px">Loading...</div>
+        </div>
+    </div>
+    <br>
+    <div class=row>
+        <div class="small-12 columns" style=color:darkgray>디버깅 :
+            <br> 큐 변수 : <span id=debug_cue></span>
+            <br /> 카운트 다운 날짜 : <span id=debug_countdown></span>
+            <br /> 카운트 다운 몇분 몇초 : <span id=debug_timermin></span>: <span id=debug_timersec></span>
+            <br /> <a href=../data/easteregg.html>EasterEgg</a></div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class=row>
+        <div class="small-12 columns">
+            <form id=emergency_bottom action=emergency.php method=post>
+                <button style=width:100%;padding:5px class="alert button">EMERGENCY</button>
+            </form>
+        </div>
+    </div>
+    <div class=row>
+        <div class="small-12 columns" align=center style=color:#FFF><img src=../favicon_appletouch.png width=15px height=15px>&nbsp; ViCue 6.0 Recoded. built by Alex Park (Leader of YIT) and YHSSC with
+            <3 <br> Copyright (C) 2017 Alex Park (<a href=mailto:psh010209@naver.com>psh010209@naver.com</a>)
+                <br> 이 프로그램은 제품에 대한 어떠한 형태의 보증도 제공되지 않습니다.
+                <br> 이 프로그램은 <a href=http://www.fsf.org/>자유 소프트웨어</a>이며 <a href=https://github.com/0xEBB095EC8381ED9DAC/ViCue6/blob/master/LICENSE>Apache License 2.0</a>를 만족시키는 조건 아래 자유롭게 재배포할 수 있습니다.
+                <br> 이에 대한 자세한 사항은 본 프로그램의 구현을 담은 다음 레포지토리에서 확인하십시오: <a href=https://github.com/0xEBB095EC8381ED9DAC/ViCue6>https://github.com/0xEBB095EC8381ED9DAC/ViCue6</a></div>
+    </div>
+    <script>
+        $(document).foundation();
+    </script>
+    <script src="js/ViCue.js"></script>
+    <script>
+        countdown();
+    </script>
+=======
 <body style="background-color:#242424 !important;"  onLoad="responsive_menu(); refresh_all_data_root();" onresize="responsive_menu();">
 
 <div class="off-canvas-wrapper"  style="background:#454545 !important;">
@@ -103,7 +198,7 @@
 	<div class="row">
 		<div class="small-12 columns" align="center" style="color:#FFFFFF; padding-top:6px">
 			공지사항
-			<div id="notice" align="center" style="width: 100%; background-color: #333 !important; text-align: center !important;line-height: 50px;font-size: 20pt;padding:10px">Loading...</div>
+			<div id="notice" align="center" style="width: 100%; background-color: #333 !important; text-align: center !important;line-height: 25pt;font-size: 20pt;padding:10px">Loading...</div>
 		</div>
 	</div>
 	
@@ -149,5 +244,7 @@
 
 			
 	
+>>>>>>> 5295c45e10c10b1147d67971d6d557a663b4fe6a
 </body>
+
 </html>

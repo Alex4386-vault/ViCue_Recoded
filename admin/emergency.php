@@ -4,9 +4,10 @@
 <meta charset="utf-8">
 <title>Activating Emergency Mode!!</title>
 <!--<meta http-equiv="refresh" content="1;url=index.html" />-->
+<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
 </head>
 
-<body style="background-color:#242424 !important; color:#FFF">
+<body style="background-color:#242424 !important; color:#FFF; font-family: 'Noto Sans KR', sans-serif;">
 	Loading PHP binaries..... <br>
 	
 	<p><h1><strong>Welcome to ViCue 6.0 debug zone....</strong></h1></p>
@@ -41,7 +42,7 @@
 		
 		echo("starting to write new value at queue<br>");
 		$emergency_cue = ("emergency");
-		$emergency_notice = ("<b>비상!</b> <b>관리자 구역</b>에서<br> 비상 사태가 발생하였습니다!!");
+		$emergency_notice = ("<strong><span style=\"color:#e74c3c\">비상! </span>관리자 구역</strong>에서&nbsp;<br />비상사태가 발생했습니다!");
 		
 		fwrite($filewrite1, $emergency_notice);
 		echo ("<br><br>current notice <b>");

@@ -1,55 +1,8 @@
-<!DOCTYPE html>
-<!--
-Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
-For licensing, see LICENSE.md or http://ckeditor.com/license
--->
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>UI Color Picker &mdash; CKEditor Sample</title>
-	<script src="../../../ckeditor.js"></script>
-	<link rel="stylesheet" href="../../../samples/old/sample.css">
-	<meta name="ckeditor-sample-name" content="UIColor plugin">
-	<meta name="ckeditor-sample-group" content="Plugins">
-	<meta name="ckeditor-sample-description" content="Using the UIColor plugin to pick up skin color.">
-</head>
-<body>
-	<h1 class="samples">
-		<a href="../../../samples/old/index.html">CKEditor Samples</a> &raquo; UI Color Plugin
-	</h1>
-	<div class="warning deprecated">
-		This sample is not maintained anymore. Check out its <a href="http://sdk.ckeditor.com/samples/uicolorpicker.html">brand new version in CKEditor SDK</a>.
-	</div>
-	<div class="description">
-		<p>
-			This sample shows how to use the UI Color picker toolbar button to preview the skin color of the editor.
-			<strong>Note:</strong>The UI skin color feature depends on the CKEditor skin
-			compatibility. The Moono and Kama skins are examples of skins that work with it.
-		</p>
-	</div>
-	<form action="../../../samples/sample_posteddata.php" method="post">
-	<div id="ui-color-plugin">
-		<p>
-			If the <strong>uicolor</strong> plugin along with the dedicated <strong>UIColor</strong>
-			toolbar button is added to CKEditor, the user will also be able to pick the color of the
-			UI from the color palette available in the <strong>UI Color Picker</strong> dialog window.
-		</p>
-		<p>
-			To insert a CKEditor instance with the <strong>uicolor</strong> plugin enabled,
-			use the following JavaScript call:
-		</p>
-		<pre class="samples">
+<html><head><meta charset=utf-8><title>UI Color Picker &mdash; CKEditor Sample</title><script src="../../../ckeditor.js"></script><link rel=stylesheet href=../../../samples/old/sample.css><meta name=ckeditor-sample-name content="UIColor plugin"><meta name=ckeditor-sample-group content=Plugins><meta name=ckeditor-sample-description content="Using the UIColor plugin to pick up skin color."></head><body><h1 class=samples><a href=../../../samples/old/index.html>CKEditor Samples</a> &raquo; UI Color Plugin</h1><div class="warning deprecated">This sample is not maintained anymore. Check out its <a href=http://sdk.ckeditor.com/samples/uicolorpicker.html>brand new version in CKEditor SDK</a>.</div><div class=description><p>This sample shows how to use the UI Color picker toolbar button to preview the skin color of the editor. <B>Note:</B>The UI skin color feature depends on the CKEditor skin compatibility. The Moono and Kama skins are examples of skins that work with it.</p></div><form action=../../../samples/sample_posteddata.php method=post><div id=ui-color-plugin><p>If the <B>uicolor</B> plugin along with the dedicated <B>UIColor</B> toolbar button is added to CKEditor, the user will also be able to pick the color of the UI from the color palette available in the <B>UI Color Picker</B> dialog window.</p><p>To insert a CKEditor instance with the <B>uicolor</B> plugin enabled, use the following JavaScript call:</p><pre class="samples">
 CKEDITOR.replace( '<em>textarea_id</em>', {
 	<strong>extraPlugins: 'uicolor',</strong>
 	toolbar: [ [ 'Bold', 'Italic' ], [ <strong>'UIColor'</strong> ] ]
-});</pre>
-		<h2>Used in themed instance</h2>
-		<p>
-			Click the <strong>UI Color Picker</strong> toolbar button to open up a color picker dialog.
-		</p>
-		<p>
-			<textarea cols="80" id="editor1" name="editor1" rows="10">&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="http://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;</textarea>
-			<script>
+});</pre><h2>Used in themed instance</h2><p>Click the <B>UI Color Picker</B> toolbar button to open up a color picker dialog.</p><p><textarea cols="80" id="editor1" name="editor1" rows="10">&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="http://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;</textarea> <script>
 
 				// Replace the <textarea id="editor"> with an CKEditor
 				// instance, using default configurations.

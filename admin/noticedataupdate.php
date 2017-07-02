@@ -6,9 +6,10 @@
 <!--
 <meta http-equiv="refresh" content="1;url=index.html" />
 -->
+<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
 </head>
 
-<body style="background-color:#242424 !important; color:#FFF">
+<body style="background-color:#242424 !important; color:#FFF; font-family: 'Noto Sans KR', sans-serif;">
 	Loading PHP binaries..... <br>
 	
 	<p><h1><strong>Welcome to ViCue 6.0 debug zone....</strong></h1></p>
@@ -29,12 +30,9 @@
 		
 		echo("starting to write new notice");
 		$emergency_notice = ("stop");
-		$new_notice_wobr = $_POST["message"] or $emergency_notice = ("activate");
+		$new_notice = $_POST["message"] or $emergency_notice = ("activate");
 		
-		if($emergency_notice != "activate")
-		{
-			$new_notice = nl2br($new_notice_wobr);
-		}
+
 		
 		if($emergency_notice == "activate")
 		{
@@ -60,7 +58,6 @@ $new_notice = str_ireplace("</object>","</preventxss_object>",$new_notice);
 
 	$new_notice = str_ireplace("</script>","</preventxss_script>",$new_notice);
 
-	$new_notice = str_ireplace("<img","<preventxss_img",$new_notice);
 
 	$new_notice = str_ireplace("<svg","</preventxss_svg",$new_notice);
 
