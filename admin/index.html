@@ -204,15 +204,44 @@
                 <br> 이 프로그램은 <a href=http://www.fsf.org/>자유 소프트웨어</a>이며 <a href=https://github.com/0xEBB095EC8381ED9DAC/ViCue6/blob/master/LICENSE>Apache License 2.0</a>를 만족시키는 조건 아래 자유롭게 재배포할 수 있습니다.
                 <br> 이에 대한 자세한 사항은 본 프로그램의 구현을 담은 다음 레포지토리에서 확인하십시오: <a href=https://github.com/0xEBB095EC8381ED9DAC/ViCue6>https://github.com/0xEBB095EC8381ED9DAC/ViCue6</a></div>
     </div>
-    <script>
-        $(document).foundation();
-    </script>
-    <script src="js/ViCue.js"></script>
-    <script>
-        var cue_data = document.getElementById("debug_cue").innerHTML;
-        document.getElementById('cue_new').getAttributeNode("placeholder").value = cue_data;
-        countdown();
-    </script>
+	
+	<script>
+	$(document).foundation();
+	</script>
+			
+	<script src="js/ViCue.js"></script>
+			
+	<script>
+		var cue_data = document.getElementById("debug_cue").innerHTML;	
+		document.getElementById('cue_new').getAttributeNode("placeholder").value = cue_data;
+                CKEDITOR.replace( 'message_text' , {
+        enterMode : CKEDITOR.ENTER_BR,
+        shiftEnterMode: CKEDITOR.ENTER_P,
+        toolbarGroups: [
+		{ name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+		{ name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+		{ name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+		{ name: 'forms', groups: [ 'forms' ] },
+		'/',
+		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+		{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+		{ name: 'links', groups: [ 'links' ] },
+		{ name: 'insert', groups: [ 'insert' ] },
+		'/',
+		{ name: 'styles', groups: [ 'styles' ] },
+		{ name: 'colors', groups: [ 'colors' ] },
+		{ name: 'tools', groups: [ 'tools' ] },
+		{ name: 'others', groups: [ 'others' ] },
+		{ name: 'about', groups: [ 'about' ] }
+	],
+        removeButtons: 'Save,Form,Checkbox,HiddenField,ImageButton,Radio,TextField,Textarea,Select,Button,Flash,HorizontalRule,PageBreak,Iframe',
+        
+    });
+       countdown();
+
+
+	</script>
+
 </body>
 
 </html>
