@@ -30,7 +30,7 @@
 		
 		echo("starting to write new notice");
 		$emergency_notice = ("stop");
-		$new_notice_wobr = $_POST["message"] or $emergency_notice = ("activate");
+		$new_notice = $_POST["message"] or $emergency_notice = ("activate");
 		
 
 		
