@@ -13,12 +13,14 @@
  > Make your event management much easier! ViCue6!
  
  **ViCue6** is a web-based application helps you to cue your events!
- The Event Managers can use timer to easily check time and change your cue
+ The Event Managers can use timer to easily check time and change cue
  state easily!
  
  Original Version of the **ViCue**(As Known As ViCue 5.0.3 or under) was
  developed as closed source, but due to sean's graduation and development
- association with YCC(Yeoido Coding Club or YIT) 
+ association with YCC(Yeoido Coding Club or YIT),
+ The original code was removed and all the code was rewritten.
+ so, Now, We are releasing this to everyone (I mean... being open-source)
 
 ### How to install ViCue6
  **This requires Web server with php enabled.** 
