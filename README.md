@@ -6,6 +6,8 @@
     * Sean Kim for the CONCEPT OF THIS IDEA (NONE OF HIS SOURCES INCLUDED)
     * jQuery and Zurb for awesome javascript frameworks!
     * CKEditor for easier Notice Editing
+	
+ - Join our discord bug-tracker and development team! [Click Here!!](https://discord.gg/ryq5bTK)
  - Languages
 	* [English](#english)
 	* [한국어](#한국어)
