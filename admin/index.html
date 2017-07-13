@@ -142,7 +142,7 @@
                 </form>
             </div>
         </div>
-        <form id=number_update action=numberdataupdate.php method=post target=_blank>
+        <form id=number_update action=allqueueupdate.php method=post target=_blank>
             <div class="medium-1 columns" style=color:darkgray>
                 <label style=color:darkgray>순번
                     <input type=number placeholder=# id=current_number_text name=new_number>
@@ -150,9 +150,8 @@
                 <script>
                 </script>
             </div>
-        </form>
+
         <div class="medium-7 columns" style=color:darkgray;display:inline>
-            <form id=queue_update action=queuedataupdate.php method=post target=_blank>
                 <div class=row>
                     <div class="medium-6 columns">
                         <label style=color:darkgray>현재 순서
@@ -167,7 +166,6 @@
                 </div>
                 <input type=submit href=#features style=width:65%;padding:5px class="alert button">
                 <button type=button style=width:25%;padding:5px class=button onclick=next_to_now();>Next To Now</button>
-            </form>
             <script>
                 function next_to_now() {
                     document.getElementById('current_text').value = document.getElementById('next_text').getAttributeNode("placeholder").value;
@@ -175,6 +173,7 @@
                 }
             </script>
         </div>
+        </form>
         <div class="medium-8 columns">
             <form id=notice_update action=noticedataupdate.php method=post target=_blank>
                 <label style=color:darkgray>공지사항 (최대 4줄이 적당합니다)

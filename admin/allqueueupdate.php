@@ -169,7 +169,7 @@ $newnumber = str_ireplace("</object>","</preventxss_object>",$newnumber);
 
 	$newnumber = str_ireplace("<svg","</preventxss_svg",$newnumber);
 	
-	fwrite($filewrite3, $next_queue);
+	fwrite($filewrite3, $newnumber);
 		echo ("<br><br>New number <b>");
 		echo $newnumber;
 		echo ("</b> is written.<br />");
