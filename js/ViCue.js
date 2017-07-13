@@ -121,7 +121,7 @@ function change_status_style() {
 		s_obj.style.border="5px solid #3489d1";
 		
 		ref_all = setInterval(function(){ refresh_all_data() }, 800);
-		if($("#cue").css("color") === "rgb(52,137,209)") {
+		if($("#cue").css("color") === "rgb(52, 137, 209)") {
 			$("#cue").css("background-color","#3489d1");
 			$("#cue").css("color","#333");
 		} else {
