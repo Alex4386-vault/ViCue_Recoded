@@ -113,6 +113,19 @@ function change_status_style() {
 			$("#cue").css("background-color","#333");
 			$("#cue").css("color","#DA3542");
 		}
+	} else if (status_text==="9" || status_text === "baka" || status_text === "cirno") {
+		s_obj.innerHTML ="BAKA";
+		s_obj.style.border="5px solid #3489d1";
+		
+		ref_all = setInterval(function(){ refresh_all_data() }, 800);
+		if($("#cue").css("color") === "#3489d1") {
+			$("#cue").css("background-color","#3489d1");
+			$("#cue").css("color","#333");
+		} else {
+			$("#cue").css("background-color","#333");
+			$("#cue").css("color","#3489d1");
+		}
+
 	} else {
 		s_obj.innerHTML ="&nbsp;";
 		s_obj.style.border="5px solid #333";
