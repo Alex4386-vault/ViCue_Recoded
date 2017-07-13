@@ -33,7 +33,7 @@
 		
 		echo ("old current number : ");
 		echo ("<strong>");
-		$oldnumber = fread($fileread,filesize("../data/currentnumber.html"));
+		$oldnumber = fread($fileread3,filesize("../data/currentnumber.html"));
 		echo $oldnumber;
 		echo ("</strong><br>");
 	
