@@ -65,13 +65,11 @@
 	
 		if($emergency_writeinterruption1 == "activate")
 		{
-			if($emergency_writeinterruption2 == "stop")
-			{
-				echo("<br><b>SEVERE ERROR : </b>current value is not found<br>");
-				echo("<b>ERROR HANDLING : </b>just using current value <b> ");
-				$current_queue = $oldcurrent;
+			echo("<br><b>SEVERE ERROR : </b>current value is not found<br>");
+			echo("<b>ERROR HANDLING : </b>just using current value <b> ");
+			$current_queue = $oldcurrent;
 				
-			} 
+			
 		}
 		
 		if($emergency_writeinterruption2 == "activate")
