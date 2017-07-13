@@ -141,9 +141,9 @@ function change_status_style() {
 	} else if (status_text==="9" || status_text === "baka" || status_text === "cirno") {
 		s_obj.innerHTML ="BAKA";
 		s_obj.style.border="5px solid #3489d1";
-		
+		s_obj.style.lineHeight="90px";
 		ref_all = setInterval(function(){ refresh_all_data() }, 800);
-		if($("#cue").css("color") === "#3489d1") {
+		if($("#cue").css("color") === "rgb(52,137,209)") {
 			$("#cue").css("background-color","#3489d1");
 			$("#cue").css("color","#333");
 		} else {
