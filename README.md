@@ -31,7 +31,7 @@
 #### For Windows
  1. Install the xampp(or another web server binary (but I do **NOT** recommend to use NGINX since it is built for web caching)) to your machine.
     1. If you are not using xampp, you should change your change your web server's config to work with php. **(I recommend you to use xampp if you don't want to change configs by yourself)**
- 1. go into your web server directory (if you are using xampp, then, It is "Installation Directory/htdocs/") and put everything in the directory (It is OK to use inside another directory  since The Code itself is using relative path)
+ 1. go into your web server directory (if you are using xampp, then, It is "Installation Directory/htdocs/") and put everything in the directory (It is OK to use inside another directory  since The Code itself is using relative path **except 404 page**)
  1. go to your web server config and prevent it from caching its data
     1. If you are using apache, go to your httpd.conf and write
     
@@ -63,7 +63,7 @@
 #### For Linux
  1. Install the httpd(s) (but I do **NOT** recommend to use NGINX since it is built for web caching)) to your machine.
     1. Admin Page **REQUIRES** PHP! Please download your httpd version of php
- 1. go into your web server directory and put it everything in the directory (It is OK to use inside another directory since The Code itself is using relative path)
+ 1. go into your web server directory and put it everything in the directory (It is OK to use inside another directory since The Code itself is using relative path **except 404 page**)
  1. go to your web server config and prevent it from caching its data
     1. If you are using apache, go to your httpd.conf and write 
     ```
@@ -111,7 +111,7 @@
 #### Windows
  1. xampp 또는 다른 웹서버를 설치합니다 (근데, NGINX는 데이터를 캐싱하기 때문에 **절대 추천드리지 않습니다**)
     1. xampp를 사용하지 않으신다면 php와의 연동 작업을 직접 진행해 주세요! **(귀차니즘과 빨리빨리문화에 숙달된 한국인은 xampp 씁시다. 워짜피 한국은 윈도우 공화국 이잖아요)**
- 1. 웹서버 디렉토리로 (xampp라면, "설치 경로/htdocs/") 이동하여 모든 파일들을 옮겨 줍니다. (그 아래에 폴더 만들어서 그 안에 복사해도 됩니다 (상대경로 사용))
+ 1. 웹서버 디렉토리로 (xampp라면, "설치 경로/htdocs/") 이동하여 모든 파일들을 옮겨 줍니다. (그 아래에 폴더 만들어서 그 안에 복사해도 됩니다 (상대경로 사용 **404 페이지 제외**))
  1. 캐싱을 막기위해 서버의 config를 수정해 줍니다
     1. apache서버(xampp) 는 httpd.conf에 
     ```
@@ -142,7 +142,7 @@
  #### Linux
  1. 웹서버를 설치합니다 (근데, NGINX는 데이터를 캐싱하기 때문에 **절대 추천드리지 않습니다**)
     1. php와의 연동 작업을 직접 진행해 주세요! (LoadModule등... )
- 1. 웹서버 디렉토리로 (대개 /var/www/html/) 이동해 모든 파일을 옮겨 줍니다! (그 아래에 폴더 만들어서 그 안에 복사해도 됩니다 (상대경로 사용))
+ 1. 웹서버 디렉토리로 (대개 /var/www/html/) 이동해 모든 파일을 옮겨 줍니다! (그 아래에 폴더 만들어서 그 안에 복사해도 됩니다 (상대경로 사용 **404 페이지 제외**))
  1. 캐싱을 막기위해 서버의 config를 수정해 줍니다
     1. apache서버(xampp) 는 httpd.conf에 
     ```
