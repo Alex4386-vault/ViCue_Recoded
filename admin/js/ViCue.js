@@ -4,10 +4,14 @@ var clockVar = setInterval(function(){ clockTimer() }, 1000);
 function clockTimer() {
     var d = new Date();
     var hr=0;
-    if(d.getHours()>12) {
+    if(d.getHours()>=12) {
     	hr="오후 " + (d.getHours()-12);
     } else {
     	hr="오전 " + d.getHours();
+		if(d.getHours()==0)
+		{
+			hr="오전 " + "12"
+		}
     }
     var min=0;
     if(d.getMinutes()<10) {
