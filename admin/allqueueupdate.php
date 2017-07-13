@@ -68,23 +68,17 @@
 			if($emergency_writeinterruption2 == "stop")
 			{
 				echo("<br><b>SEVERE ERROR : </b>current value is not found<br>");
-				echo("<b>ERROR HANDLING : </b>just changing next value <b> ");
+				echo("<b>ERROR HANDLING : </b>just using current value <b> ");
 				$current_queue = $oldcurrent;
 				
-			} else {
-			echo("<br><b>SEVERE ERROR : </b>current value is not found<br>");
-			echo("<b>ERROR HANDLING : </b>using old next value<b> ");
-			echo $oldnext;
-			echo(" </b>instead<br>");
-			$current_queue = $oldnext;
-			}
+			} 
 		}
 		
 		if($emergency_writeinterruption2 == "activate")
 		{
 			echo("<br><b>SEVERE ERROR : </b>next value is not found<br>");
-			echo("<b>ERROR HANDLING : </b>using <b>-</b> instead.<br>");
-			$next_queue = ("-");
+			echo("<b>ERROR HANDLING : </b>using Old Next value instead.<br>");
+			$next_queue = $oldnext;
 		}
 		
 		if($emergency_writeinterruption3 == "activate")
