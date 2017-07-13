@@ -1,5 +1,6 @@
-# ViCue6
+﻿# ViCue6
  - Idea by Sean Kim
+ - UX Design by 문보건(moonbogun@naver.com)
  - Special Thanks to...
     
     * Sean Kim for the CONCEPT OF THIS IDEA (NONE OF HIS SOURCES INCLUDED)
