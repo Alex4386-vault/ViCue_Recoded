@@ -1,4 +1,4 @@
-﻿# ViCue6
+# ViCue Recoded
  - Idea by Sean Kim
  - UX Design by 문보건(moonbogun@naver.com)
  - Special Thanks to...
