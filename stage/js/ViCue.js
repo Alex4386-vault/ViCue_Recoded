@@ -99,11 +99,11 @@ function change_status_style() {
 		s_obj.style.lineHeight="400px";
 		ref_all = setInterval(function(){ refresh_all_data() }, 1000);
 	} else if (status_text==="3" || status_text === "standby") {
-		s_obj.innerHTML ="STANDBY";
+		s_obj.innerHTML ="STAND<br>BY";
 		s_obj.style.border="5px solid #E5C04C";
 		s_obj.style.backgroundColor="#E5C04C";
 		s_obj.style.color="black";
-		s_obj.style.lineHeight="400px";
+		s_obj.style.lineHeight="200px";
 		ref_all = setInterval(function(){ refresh_all_data() }, 500);
 	} else if (status_text==="4" || status_text === "go") {
 		s_obj.innerHTML ="GO";
@@ -272,17 +272,17 @@ function countdown() {
   	// Display the result in the element with id="demo"
 	document.getElementById("countdown").style.fontSize="15pt";
 	document.getElementById("countdown").style.lineHeight="50px"
-	document.getElementById("countdown").innerHTML = days + "일 " + hours + "시간 " + "<br>" + minutes + "분 " + seconds + "초 ";
+	document.getElementById("countdown").innerHTML = days + "일 " + hours + "시간 " + minutes + "분 " + seconds + "초 ";
 	if(days < 1)
 		{
 			document.getElementById("countdown").style.fontSize="15pt";
 			document.getElementById("countdown").style.lineHeight="50px"
-			document.getElementById("countdown").innerHTML = hours + "시간 " + minutes + "분 " + "<br>" + seconds + "초 ";
+			document.getElementById("countdown").innerHTML = hours + "시간 " + minutes + "분 " + seconds + "초 ";
 			if (hours < 1)
 				{
 					document.getElementById("countdown").style.fontSize="20pt";
 					document.getElementById("countdown").style.lineHeight="50px";
-					document.getElementById("countdown").innerHTML = minutes + "분 " + "<br>" + seconds + "초 ";
+					document.getElementById("countdown").innerHTML = minutes + "분 " + seconds + "초 ";
 					if (minutes < 1)
 						{
 							document.getElementById("countdown").style.fontSize="30pt";
