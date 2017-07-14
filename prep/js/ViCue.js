@@ -46,6 +46,22 @@ function refresh_all_data() {
 	$("#debug_timermin").load("../data/timer/min.html");
 	$("#debug_timersec").load("../data/timer/sec.html");
 	
+	easteregg();
+}
+
+function easteregg(){
+	var cue_num = document.getElementById("currentnumber").innerHTML;
+	if(cue_num == 99)
+	{
+		$("#easteregg").show();
+	} else {
+		$("#easteregg").hide();
+	}
+	document.getElementById('current_number_text').getAttributeNode("placeholder").value = cue_num;
+	var current_queue = document.getElementById("nowplaying").innerHTML;
+	document.getElementById('current_text').getAttributeNode("placeholder").value = current_queue;
+	var next_queue = document.getElementById("commingup").innerHTML;
+	document.getElementById('next_text').getAttributeNode("placeholder").value = next_queue;
 	
 }
 

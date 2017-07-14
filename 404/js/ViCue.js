@@ -27,17 +27,9 @@ function clockTimer() {
 
 var ref_all = setInterval(function(){ refresh_all_data() }, 500);
 function refresh_all_data() {
-    $("#event_name").load("../data/eventname.html");
-	$("#debug_cue").load("../data/cue.html");
+    $("#event_name").load("/ver6/data/eventname.html");
 	change_status_style();
-	$("#nowplaying").load("../data/nowplaying.html");
-	$("#commingup").load("../data/commingup.html");
-	$("#currentnumber").load("../data/currentnumber.html");
-	$("#notice").load("../data/message.html");
-	$("#debug_countdown").load("../data/countdown.html");
-	$("#debug_timermin").load("../data/timer/min.html");
-	$("#debug_timersec").load("../data/timer/sec.html");
-	
+		
 	
 }
 
