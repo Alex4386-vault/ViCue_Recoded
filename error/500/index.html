@@ -2,7 +2,7 @@
 
 <head>
     <meta charset=utf-8>
-    <title>ViCue Recoded - 404!</title>
+    <title>ViCue Recoded - 500!</title>
     <link rel=stylesheet href=/ver6/css/foundation.css>
     <link rel=stylesheet href=/ver6/css/app.css>
     <script src="/ver6/js/jquery.js"></script>
@@ -11,7 +11,7 @@
     <meta name=viewport content=width=600px>
 </head>
 
-<body style="background-color:#242424 !important;" onLoad="responsive_menu(); refresh_all_data_root();" onresize=responsive_menu();>
+<body style="background-color:#242424 !important;" onLoad=" refresh_all_data_root();" onresize=>
     <div class=off-canvas-wrapper style="background:#454545 !important;">
         <div class="off-canvas position-left" id=offCanvasLeft data-off-canvas data-position=left style="background:#454545 !important;">
             <button class=close-button aria-label="Close menu" type=button data-close> <span aria-hidden=true style=color:#FFF>&times;</span> </button>
@@ -40,13 +40,18 @@
     <div class=row>
         <div class="small-12 columns" style=padding-bottom:10px>
             <div style=padding:10px;text-align:left;width:100%;background:#454545;color:#FFF>
-                <button class=menu-icon type=button data-open=offCanvasLeft></button>&nbsp;&nbsp;&nbsp; <span id=event_name>Loading...</span> - ViCue Recoded - ERROR: 404 - <span id=clock>Current Time</span></div>
+                <button class=menu-icon type=button data-open=offCanvasLeft></button>&nbsp;&nbsp;&nbsp; <span id=event_name>Loading...</span> - ViCue Recoded - ERROR: 500 - <span id=clock>Current Time</span></div>
         </div>
     </div>
     <div class=row>
         <div class="small-12 columns" style="color:#FFF;text-align:center">
             <h1>어! 뭔가 잘못되었어요!!</h1>
-            ERROR 404 : 서버가 요청한 파일을 찾을 수 없습니다!!<br>
+            ERROR 500 : 서버에 오류가 발생했습니다!!<br>
+            Technical Information : ERROR 500 Internal Server Error<br>
+            <br><br>
+            이 오류는 대개 서버에 오류가 발생한 경우에 발생합니다.<br>
+            이 오류는 <strong>굉장히 심각한 오류이니 github에 이슈를 제기 하기 보다 아래 Discord링크로 신고해 주세요!</strong><br>
+            Discord : <a href=https://discord.gg/ryq5bTK>https://discord.gg/ryq5bTK</a><br>
             <br><br>
             <a href=https://github.com/Alex4386/ViCue_Recoded>https://github.com/Alex4386/ViCue_Recoded</a>에 이슈를 제기해 주세요.<br>
             무슨 상황인지 정확하게 적어주시면 빠르게 버그를 수정하겠습니다.<br>
