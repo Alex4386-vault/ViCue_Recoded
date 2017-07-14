@@ -13,9 +13,9 @@
 	* [한국어](#한국어)
 
 ## English
- > Make your event management much easier! ViCue6!
+ > Make your event management much easier! ViCue Recoded!
  
- **ViCue6** is a web-based application helps you to cue your events!
+ **ViCue Recoded** is a web-based application helps you to cue your events!
  The Event Managers can use timer to easily check time and change cue
  state easily!
  
@@ -25,7 +25,7 @@
  The original code was removed and all the code was rewritten.
  so, Now, We are releasing this to everyone (I mean... being open-source)
 
-### How to install ViCue6
+### How to install ViCue Recoded
  **This requires Web server with php enabled.** 
 
 #### For Windows
@@ -91,20 +91,20 @@
  1. Go and use it!
  
 ### License
- The source code is distributed under [Apache License 2.0](https://github.com/0xEBB095EC8381ED9DAC/ViCue6/blob/master/LICENSE)
+ The source code is distributed under [Apache License 2.0](https://github.com/Alex4386/ViCue_Recoded/blob/master/LICENSE)
  
  
 ## 한국어
- > 행사 진행을 쉽고 빠르게! ViCue6!
+ > 행사 진행을 쉽고 빠르게! ViCue Recoded!
  
- **ViCue6** 은 여러분의 행사 진행을 도와 주기위해 개발되었습니다!
+ **ViCue Recoded** 은 여러분의 행사 진행을 도와 주기위해 개발되었습니다!
  이벤트 관리자들은 즉각적인 큐 변화, 빠른 업데이트 등을 통한 실시간 큐잉을 하실수 있습니다!
  
  **ViCue**의 원래 버전(ViCue 5.0.3 또는 이하 버전)은 클로즈드 소스로 개발되었습니다.
  그러나 개발인원의 교체 (여의도고 공학부 참여) 및 소스코드를 새로 제작함에 따라 (이름만 계승함) 
  오픈소스로 개방하게 되었습니다.
  
-### ViCue6 설치
+### ViCue Recoded 설치
  **php를 사용할 수 있는 웹 서버가 필요합니다, 실시간 업데이트가 필요하므로 웹서버의 응답속도 또한 중요합니다.** 
 
 
@@ -171,4 +171,4 @@
  1. 자 이제 쓰세요!
  
 ### License
- 이 소스코드는 [Apache License 2.0](https://github.com/0xEBB095EC8381ED9DAC/ViCue6/blob/master/LICENSE)에 의거해 배포되고 있습니다.
+ 이 소스코드는 [Apache License 2.0](https://github.com/Alex4386/ViCue_Recoded/blob/master/LICENSE)에 의거해 배포되고 있습니다.
