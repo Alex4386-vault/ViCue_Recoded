@@ -184,6 +184,7 @@
                 function next_to_now() {
                     document.getElementById('current_text').value = document.getElementById('next_text').getAttributeNode("placeholder").value;
                     document.getElementById('next_text').value = "-";
+					document.getElementById('current_number_text').value = (parseInt(document.getElementById('current_number_text').getAttributeNode("placeholder").value) + 1);
                 }
             </script>
         </div>
@@ -195,17 +196,49 @@
                 </label>
                 <input type=submit class="alert button"></input>
                 <button type=button href=#features class="secondary button" onclick=noticeclear();>Clear</button>
-				<button type=submit href=#features class="secondary button" onclick=noticeclear();>Clear and submit</button>
-                <button class=button style=background-color:dimgray>Stage Dark</button>
+				<button type=submit href=#features class="secondary button" onclick=noticeclear();>Clear and submit</button> <br />
+				
+                <button type=submit class=button style=background-color:dimgray onclick=stagedark();>Stage Dark</button>
+				<button type=button class="warning button" onclick="next_prepare();">다음팀 준비</button>
+				<button type=button class="secondary button" onclick="next_standby();">다음팀 대기</button>
+				<button type=button class="warning button" onclick="next_prepareroom();">다음팀 준비실 입실</button>
+				<button type=button class="success button" onclick="current_gotostage();">현재팀 무대 진입</button>
+				
 				<script>
+					
 					function noticeclear() {
-                    CKEDITOR.instances["message_text"].setData("");
-					//document.getElementById('message_text').value = "";
+						CKEDITOR.instances['message_text'].setData( '' );
+						//document.getElementById('message_text').value = "";
 					}
-					function stagedark() {
-					CKEDITOR.instances["message_text"].setData("<strong>무대 어둡게</strong> 해주세요");
-					//document.getElementById('message_text').value = "<strong>무대 어둡게</strong> 해주세요";
+					
+					function next_prepare() {
+						var next_team = document.getElementById('commingup').innerHTML;
+						CKEDITOR.instances['message_text'].setData( '<strong>' + next_team, + '</strong> 팀은 공연을 준비하고 있어 주세요!' );
+						//document.getElementById('message_text').value = ('<strong>' + next_team, + '</strong>은 공연을 준비하고 있어 주세요!');
 					}
+					
+					function next_standby() {
+						var now_team = document.getElementById('nowplaying').innerHTML;
+						var next_team = document.getElementById('commingup').innerHTML;
+						CKEDITOR.instances['message_text'].setData( '<strong>' + next_team + '</strong> 팀은 대기해 주세요!' );
+						//document.getElementById('message_text').value = ( '<strong>' + next_team + '</strong> 팀은 대기해 주세요!');
+					}
+					
+					function next_prepareroom() {
+						var now_team = document.getElementById('nowplaying').innerHTML;
+						var next_team = document.getElementById('commingup').innerHTML;
+						CKEDITOR.instances['message_text'].setData( now_team + ' 팀의 공연이 거의 끝났습니다. ' + '<strong>' + next_team + '</strong> 팀은 준비실로 입실하여 주세요!' );
+						//document.getElementById('message_text').value = ( now_team + ' 팀의 공연이 거의 끝났습니다. ' + '<strong>' + next_team + '</strong> 팀은 준비실로 입실하여 주세요!');
+					}
+					
+					function current_gotostage() {
+						var now_team = document.getElementById('nowplaying').innerHTML;
+						CKEDITOR.instances['message_text'].setData('<strong>' now_team + '</strong> 팀은 <strong>무대 위로 올라가 주세요</strong>. ');
+						//document.getElementById('message_text').value = ('<strong>' + now_team + '</strong> 팀은 무대위로 올라가 주세요!');
+					}
+					
+					
+					
 				</script>
             </form>
         </div>
