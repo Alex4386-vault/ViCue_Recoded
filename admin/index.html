@@ -139,6 +139,20 @@
                         </label>
                     </div>
                     <input type=submit class="alert button">
+					<button type=button class="button" onclick=timer5m(); >5분</button>
+					<button type=button class="button" onclick=timer10m(); >10분</button>					
+					<script>
+						function timer5m() {
+                        document.getElementById('timer_min').value = "5";
+						document.getElementById('timer_sec').value = "00";
+						}
+						
+						function timer10m() {
+                        document.getElementById('timer_min').value = "10";
+						document.getElementById('timer_sec').value = "00";
+						}
+					</script>
+					
                 </form>
             </div>
         </div>

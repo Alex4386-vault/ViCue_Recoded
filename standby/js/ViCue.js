@@ -56,13 +56,7 @@ function easteregg(){
 		$("#easteregg").show();
 	} else {
 		$("#easteregg").hide();
-	}
-	document.getElementById('current_number_text').getAttributeNode("placeholder").value = cue_num;
-	var current_queue = document.getElementById("nowplaying").innerHTML;
-	document.getElementById('current_text').getAttributeNode("placeholder").value = current_queue;
-	var next_queue = document.getElementById("commingup").innerHTML;
-	document.getElementById('next_text').getAttributeNode("placeholder").value = next_queue;
-	
+	}	
 }
 
 function change_status_style() {
