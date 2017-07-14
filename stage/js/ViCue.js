@@ -73,7 +73,7 @@ function change_status_style() {
 	//document.getElementById('cue_new').getAttributeNode("placeholder").value = status_text;
 	clearInterval(ref_all);
 	if(status_text === "0" || status_text === "nan") {
-		s_obj.innerHTML ="NO <br>DATA";
+		s_obj.innerHTML ="NO<br>DATA";
 		s_obj.style.border="5px solid #333";
 		s_obj.style.backgroundColor="#333";
 		s_obj.style.color="#FFF";
