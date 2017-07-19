@@ -103,17 +103,19 @@ $countdown_time = str_ireplace("</object>","</preventxss_object>",$countdown_tim
 		fclose($filewrite1);
 		
     
-        $logger = fopen("../data/log.html","a") or echo("Logging System Failure!!");
+       $logger = fopen("../data/log.html", "a") or die("Logging System Failure!!");
     
-        $ip_address = $_SERVER['REMOTE_ADDR'];
+        $ip_address = $_SERVER['REMOTE_ADDR'] or die("IP Log Failed");
         //Log some IP
             
         date_default_timezone_set("Asia/Seoul");
-        $log = ("<span style=\"color:#2980b9\"><strong>[ADMIN]</strong></span> 카운트 다운 목표 값이 <strong>" + $countdown_out + "</strong>로 변경되었습니다. <span style=\"font-size:8px\">" + date("Y-m-d") + " " + date("h:i:sa") + " at IP" + $ip_address + "</span> <br> \n");
+        $current_date = date("Y-m-d");
+        $current_time = date("h:i:sa");
+        $log = ("<span style=\"color:#2980b9\"><strong>[ADMIN]</strong></span> 카운트 다운 목표 값이 <strong>" . $countdown_out . "</strong>로 변경되었습니다. <span style=\"font-size:8px\">" . $current_date . " " . $current_time . " at IP:" . $ip_address . "</span> <br> \n");
     
         fwrite($logger, $log);
         echo ("Successfully Logged. ");
-    
+        fclose($logger);
 		echo ("<script type=\"text/javascript\"> setTimeout(\"self.close()\", 1500); </script>");
 		
     

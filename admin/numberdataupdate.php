@@ -68,16 +68,18 @@ $new_number = str_ireplace("</object>","</preventxss_object>",$new_number);
     
         //THE LOGGER SYSTEM BELOW.    
         
-        $logger = fopen("../data/log.html","a") or echo("Logging System Failure!!");
+       $logger = fopen("../data/log.html", "a") or die("Logging System Failure!!");
     
-        $ip_address = $_SERVER['REMOTE_ADDR'];
+        $ip_address = $_SERVER['REMOTE_ADDR'] or die("IP Log Failed");
         //Log some IP
-		
-        $log = ("<span style=\"color:#2980b9\"><strong>[ADMIN]</strong></span> 현재 순번이 <strong>" + $new_number + "</strong>로 변경되었습니다. <span style=\"font-size:8px\">" + date("Y-m-d") + " " + date("h:i:sa") + " at IP" + $ip_address + "</span> <br> \n");
+	    $current_date = date("Y-m-d");
+        $current_time = date("h:i:sa");	
+    
+        $log = ("<span style=\"color:#2980b9\"><strong>[ADMIN]</strong></span> 현재 순번이 <strong>" . $new_number . "</strong>로 변경되었습니다. <span style=\"font-size:8px\">" . $current_date . " " . $current_time . " at IP:" . $ip_address . "</span> <br> \n");
     
         fwrite($logger, $log);
         echo ("Successfully Logged. ");
-    
+        fclose($logger);
 		echo ("<script type=\"text/javascript\"> setTimeout(\"self.close()\", 1500); </script>");
 	?>
 	

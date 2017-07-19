@@ -58,18 +58,19 @@
 		fclose($filewrite2);
 	   
         
-        $logger = fopen("../data/log.html","a") or echo("Logging System Failure!!");
+        $logger = fopen("../data/log.html", "a") or die("Logging System Failure!!");
     
-        $ip_address = $_SERVER['REMOTE_ADDR'];
+        $ip_address = $_SERVER['REMOTE_ADDR'] or die("IP Log Failed");
         //Log some IP
-            
+        $current_date = date("Y-m-d");
+        $current_time = date("h:i:sa");    
         date_default_timezone_set("Asia/Seoul");
-        $log = ("<span style=\"color:#2980b9\"><strong>[SAMPLE]</strong></span> <strong><span style=\"color:#e74c3c\">비상! </span>샘플 구역</strong>에서&nbsp;<br />비상사태가 발생했습니다! <span style=\"font-size:8px\">" + date("Y-m-d") + " " + date("h:i:sa") + " at IP" + $ip_address + "</span> <br> \n");
+        $log = ("<span style=\"color:#2980b9\"><strong>[SAMPLE]</strong></span> <strong><span style=\"color:#e74c3c\">비상! </span>샘플 구역</strong>에서&nbsp;<br />비상사태가 발생했습니다! <span style=\"font-size:8px\">" . $current_date . " " . $current_time . " at IP:" . $ip_address . "</span> <br> \n");
             
         fwrite($logger, $log);
         echo ("Successfully Logged. ");
         
-        
+        fclose($logger);
 		echo ("<br><br><br>if page doesn't redirect back to admin page, then, please use <a href=\"index.html\"> this link. </a>");	
 		
 	?>
