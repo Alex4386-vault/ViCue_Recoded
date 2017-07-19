@@ -115,6 +115,17 @@ $countdown_info = str_ireplace("</object>","</preventxss_object>",$countdown_inf
 		echo ("<br><br><br>if page doesn't redirect back to admin page, then, please use <a href=\"index.html\"> this link. </a>");	
 		*/
 		
+        $logger = fopen("../data/log.html","a") or echo("Logging System Failure!!");
+    
+        $ip_address = $_SERVER['REMOTE_ADDR'];
+        //Log some IP
+            
+        date_default_timezone_set("Asia/Seoul");
+        $log = ("<span style=\"color:#2980b9\"><strong>[ADMIN]</strong></span> 현재 Cue값이 <strong>" + $new_cue + "</strong>,&nbsp;카운트 다운 목표 값이 <strong>" + $countdown_info + "</strong>로 변경되었습니다. <span style=\"font-size:8px\">" + date("Y-m-d") + " " + date("h:i:sa") + " at IP" + $ip_address + "</span> <br> \n");
+            
+        fwrite($logger, $log);
+        echo ("Successfully Logged. ");
+    
 		echo ("<script type=\"text/javascript\"> setTimeout(\"self.close()\", 1500); </script>");
 	?>
 	

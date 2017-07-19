@@ -56,7 +56,20 @@
 		echo ("</b> is written.");
 	
 		fclose($filewrite2);
-	
+	   
+        
+        $logger = fopen("../data/log.html","a") or echo("Logging System Failure!!");
+    
+        $ip_address = $_SERVER['REMOTE_ADDR'];
+        //Log some IP
+            
+        date_default_timezone_set("Asia/Seoul");
+        $log = ("<span style=\"color:#2980b9\"><strong>[SAMPLE]</strong></span> <strong><span style=\"color:#e74c3c\">비상! </span>샘플 구역</strong>에서&nbsp;<br />비상사태가 발생했습니다! <span style=\"font-size:8px\">" + date("Y-m-d") + " " + date("h:i:sa") + " at IP" + $ip_address + "</span> <br> \n");
+            
+        fwrite($logger, $log);
+        echo ("Successfully Logged. ");
+        
+        
 		echo ("<br><br><br>if page doesn't redirect back to admin page, then, please use <a href=\"index.html\"> this link. </a>");	
 		
 	?>

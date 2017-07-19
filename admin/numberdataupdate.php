@@ -65,7 +65,19 @@ $new_number = str_ireplace("</object>","</preventxss_object>",$new_number);
 		fclose($filewrite);
 	
 		//echo ("<br><br><br>if page doesn't redirect back to admin page, then, please use <a href=\"index.html\"> this link. </a>");	
+    
+        //THE LOGGER SYSTEM BELOW.    
+        
+        $logger = fopen("../data/log.html","a") or echo("Logging System Failure!!");
+    
+        $ip_address = $_SERVER['REMOTE_ADDR'];
+        //Log some IP
 		
+        $log = ("<span style=\"color:#2980b9\"><strong>[ADMIN]</strong></span> 현재 순번이 <strong>" + $new_number + "</strong>로 변경되었습니다. <span style=\"font-size:8px\">" + date("Y-m-d") + " " + date("h:i:sa") + " at IP" + $ip_address + "</span> <br> \n");
+    
+        fwrite($logger, $log);
+        echo ("Successfully Logged. ");
+    
 		echo ("<script type=\"text/javascript\"> setTimeout(\"self.close()\", 1500); </script>");
 	?>
 	

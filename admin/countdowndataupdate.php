@@ -102,8 +102,22 @@ $countdown_time = str_ireplace("</object>","</preventxss_object>",$countdown_tim
 		fwrite($filewrite1, $countdown_out);
 		fclose($filewrite1);
 		
+    
+        $logger = fopen("../data/log.html","a") or echo("Logging System Failure!!");
+    
+        $ip_address = $_SERVER['REMOTE_ADDR'];
+        //Log some IP
+            
+        date_default_timezone_set("Asia/Seoul");
+        $log = ("<span style=\"color:#2980b9\"><strong>[ADMIN]</strong></span> 카운트 다운 목표 값이 <strong>" + $countdown_out + "</strong>로 변경되었습니다. <span style=\"font-size:8px\">" + date("Y-m-d") + " " + date("h:i:sa") + " at IP" + $ip_address + "</span> <br> \n");
+    
+        fwrite($logger, $log);
+        echo ("Successfully Logged. ");
+    
 		echo ("<script type=\"text/javascript\"> setTimeout(\"self.close()\", 1500); </script>");
 		
+    
+    
 		/*
 		fclose($filewrite1);
 		

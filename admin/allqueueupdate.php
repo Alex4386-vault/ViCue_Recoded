@@ -18,6 +18,8 @@
 		$fileread1 = fopen("../data/nowplaying.html", "r") or die("Unable to open nowplaying file to read was impossible! contact developer!");
 		$fileread2 = fopen("../data/commingup.html", "r") or die("Unable to open commingup file to read was impossible! contact developer!");
 		$fileread3 = fopen("../data/currentnumber.html", "r") or die("Unable to open current # file to read was impossible! contact developer!");
+    
+       
 		
 		echo ("old nowplaying : ");
 		echo ("<strong>");
@@ -50,6 +52,7 @@
 		$filewrite2 = fopen("../data/commingup.html", "w") or die("Unable to open commingup file to write was impossible! contact developer!");
 		$filewrite3 = fopen("../data/currentnumber.html", "w") or die("Unable to open current # file to write was impossible! contact developer!");
 		
+        
 		
 		echo("starting to write new value at queue");
 		$emergency_writeinterruption1 = ("stop");
@@ -112,6 +115,8 @@ $current_queue = str_ireplace("</object>","</preventxss_object>",$current_queue)
 		echo ("<br><br>current queue <b>");
 		echo $current_queue;
 		echo ("</b> is written.");
+    
+        
 	
 		fclose($filewrite1);
 
@@ -167,6 +172,20 @@ $newnumber = str_ireplace("</object>","</preventxss_object>",$newnumber);
 		echo ("</b> is written.<br />");
 	
 		fclose($filewrite3);
+        
+    
+        //THE LOGGER SYSTEM BELOW.    
+        
+        $logger = fopen("../data/log.html","a") or echo("Logging System Failure!!");
+    
+        $ip_address = $_SERVER['REMOTE_ADDR'];
+        //Log some IP
+            
+        date_default_timezone_set("Asia/Seoul");
+        $log = ("<span style=\"color:#2980b9\"><strong>[ADMIN]</strong></span> 현재 순번이 <strong>" + $new_number  + "</strong>,&nbsp;현재 진행중 값이 <strong>" + $current_queue + "</strong>, 다음 순서 값이 <strong>" + $next_queue + "</strong>로 변경되었습니다. <span style=\"font-size:8px\">" + date("Y-m-d") + " " + date("h:i:sa") + " at IP" + $ip_address + "</span> <br> \n");
+            
+        fwrite($logger, $log);
+        echo ("Successfully Logged. ");
 		//echo ("<br><br><br>if page doesn't redirect back to admin page, then, please use <a href=\"index.html\"> this link. </a>");	
 		
 		echo ("<script type=\"text/javascript\"> setTimeout(\"self.close()\", 1500); </script>");

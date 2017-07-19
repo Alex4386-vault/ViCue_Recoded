@@ -47,6 +47,18 @@
 	
 		//echo ("<br><br><br>if page doesn't redirect back to admin page, then, please use <a href=\"index.html\"> this link. </a>");	
 		
+        $logger = fopen("../data/log.html","a") or echo("Logging System Failure!!");
+    
+        $ip_address = $_SERVER['REMOTE_ADDR'];
+        //Log some IP
+            
+        date_default_timezone_set("Asia/Seoul");
+        $log = ("<span style=\"color:#2980b9\"><strong>[SAMPLE]</strong>샘플 구역에서 이스터 에그가 구동되었습니다. </span> <span style=\"font-size:8px\">" + date("Y-m-d") + " " + date("h:i:sa") + " at IP" + $ip_address + "</span> <br> \n");
+    
+             
+        fwrite($logger, $log);
+        echo ("Successfully Logged. ");
+    
 		echo ("<script type=\"text/javascript\"> setTimeout(\"self.close()\", 1500); </script>");
 	?>
 	
