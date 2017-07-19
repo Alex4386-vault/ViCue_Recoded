@@ -136,7 +136,10 @@ $next_queue = str_ireplace("</object>","</preventxss_object>",$next_queue);
     
         $ip_address = $_SERVER['REMOTE_ADDR'] or die("IP Log Failed");
         //Log some IP
+<<<<<<< HEAD
         date_default_timezone_set("Asia/Seoul");
+=======
+>>>>>>> 3670849... Xtreme update, Huh?
         $current_date = date("Y-m-d");
         $current_time = date("h:i:sa");
     

@@ -61,6 +61,7 @@
     
         $ip_address = $_SERVER['REMOTE_ADDR'] or die("IP Log Failed");
         //Log some IP
+<<<<<<< HEAD
     
         date_default_timezone_set("Asia/Seoul");
         $current_date = date("Y-m-d");
@@ -68,6 +69,13 @@
     
         
         $log = ("<span style=\"color:#2980b9\"><strong>[BROADCAST]</strong></span> <strong><span style=\"color:#e74c3c\">비상! </span>방송실 구역</strong>에서&nbsp;비상사태가 발생했습니다! <span style=\"font-size:8px\">" . $current_date . " " . $current_time . " at IP:" . $ip_address . "</span> <br> \n");
+=======
+        $current_date = date("Y-m-d");
+        $current_time = date("h:i:sa");
+    
+        date_default_timezone_set("Asia/Seoul");
+        $log = ("<span style=\"color:#2980b9\"><strong>[BROADCAST]</strong></span> <strong><span style=\"color:#e74c3c\">비상! </span>방송실 구역</strong>에서&nbsp;<br />비상사태가 발생했습니다! <span style=\"font-size:8px\">" . $current_date . " " . $current_time . " at IP:" . $ip_address . "</span> <br> \n");
+>>>>>>> 3670849... Xtreme update, Huh?
             
         fwrite($logger, $log);
         echo ("Successfully Logged. ");

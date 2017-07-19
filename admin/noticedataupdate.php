@@ -80,7 +80,10 @@ $new_notice = str_ireplace("</object>","</preventxss_object>",$new_notice);
         date_default_timezone_set("Asia/Seoul");
         $current_date = date("Y-m-d");
         $current_time = date("h:i:sa");
+<<<<<<< HEAD
         $new_notice = str_ireplace("<br>"," [Enter] ",$new_notice);
+=======
+>>>>>>> 3670849... Xtreme update, Huh?
         $log = ("<span style=\"color:#2980b9\"><strong>[ADMIN]</strong></span> 현재 공지사항이 <strong>" . $new_notice . "</strong>로 변경되었습니다. <span style=\"font-size:8px\">" . $current_date . " " . $current_time . " at IP:" . $ip_address . "</span> <br> \n");
             
         fwrite($logger, $log);
