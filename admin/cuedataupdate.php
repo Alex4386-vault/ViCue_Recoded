@@ -121,6 +121,8 @@ $countdown_info = str_ireplace("</object>","</preventxss_object>",$countdown_inf
         //Log some IP
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
         date_default_timezone_set("Asia/Seoul");
         $current_date = date("Y-m-d");
         $current_time = date("h:i:sa");    
@@ -134,6 +136,16 @@ $countdown_info = str_ireplace("</object>","</preventxss_object>",$countdown_inf
         $current_date = date("Y-m-d");
         $current_time = date("h:i:sa");    
 >>>>>>> bbf4616... [Censored]
+=======
+        date_default_timezone_set("Asia/Seoul");
+        $current_date = date("Y-m-d");
+        $current_time = date("h:i:sa");    
+>>>>>>> 8ba7766... [Censored]
+=======
+        date_default_timezone_set("Asia/Seoul");
+        $current_date = date("Y-m-d");
+        $current_time = date("h:i:sa");    
+>>>>>>> 9dbe8ad... KIRA KIRA DIAMONDO
         $log = ("<span style=\"color:#2980b9\"><strong>[ADMIN]</strong></span> 현재 Cue값이 <strong>" . $new_cue . "</strong>,&nbsp;카운트 다운 목표 값이 <strong>" .  $countdown_info . "</strong>로 변경되었습니다. <span style=\"font-size:8px\">" . $current_date . " " . $current_time . " at IP:" . $ip_address . "</span> <br> \n");
             
         fwrite($logger, $log);

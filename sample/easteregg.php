@@ -53,6 +53,8 @@
         //Log some IP
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
         date_default_timezone_set("Asia/Seoul");
         $current_date = date("Y-m-d");
         $current_time = date("h:i:sa");
@@ -68,6 +70,18 @@
         $current_time = date("h:i:sa");
       
 >>>>>>> bbf4616... [Censored]
+=======
+        date_default_timezone_set("Asia/Seoul");
+        $current_date = date("Y-m-d");
+        $current_time = date("h:i:sa");
+      
+>>>>>>> 8ba7766... [Censored]
+=======
+        date_default_timezone_set("Asia/Seoul");
+        $current_date = date("Y-m-d");
+        $current_time = date("h:i:sa");
+      
+>>>>>>> 9dbe8ad... KIRA KIRA DIAMONDO
         $log = ("<span style=\"color:#2980b9\"><strong>[SAMPLE]</strong>샘플 구역에서 이스터 에그가 구동되었습니다. </span> <span style=\"font-size:8px\">" . $current_date . " " . $current_time . " at IP:" . $ip_address . "</span> <br> \n");
     
              

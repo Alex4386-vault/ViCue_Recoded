@@ -82,12 +82,20 @@ $new_notice = str_ireplace("</object>","</preventxss_object>",$new_notice);
         $current_time = date("h:i:sa");
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
         $new_notice = str_ireplace("<br>"," [Enter] ",$new_notice);
 =======
 >>>>>>> 3670849... Xtreme update, Huh?
 =======
         $new_notice = str_ireplace("<br>"," [Enter] ",$new_notice);
 >>>>>>> bbf4616... [Censored]
+=======
+        $new_notice = str_ireplace("<br>"," [Enter] ",$new_notice);
+>>>>>>> 8ba7766... [Censored]
+=======
+        $new_notice = str_ireplace("<br>"," [Enter] ",$new_notice);
+>>>>>>> 9dbe8ad... KIRA KIRA DIAMONDO
         $log = ("<span style=\"color:#2980b9\"><strong>[ADMIN]</strong></span> 현재 공지사항이 <strong>" . $new_notice . "</strong>로 변경되었습니다. <span style=\"font-size:8px\">" . $current_date . " " . $current_time . " at IP:" . $ip_address . "</span> <br> \n");
             
         fwrite($logger, $log);
