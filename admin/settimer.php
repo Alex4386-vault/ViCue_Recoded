@@ -124,9 +124,13 @@ $sec = str_ireplace("</object>","</preventxss_object>",$sec);
         $ip_address = $_SERVER['REMOTE_ADDR'] or die("IP Log Failed");
         //Log some IP
 <<<<<<< HEAD
+<<<<<<< HEAD
         date_default_timezone_set("Asia/Seoul");
 =======
 >>>>>>> 3670849... Xtreme update, Huh?
+=======
+        date_default_timezone_set("Asia/Seoul");
+>>>>>>> bbf4616... [Censored]
         $current_date = date("Y-m-d");
         $current_time = date("h:i:sa");
     
