@@ -1,8 +1,32 @@
+<?php
+        $chatter = fopen("../data/chat.html", "a") or die("Chat System Failure!!");
+    
+        $ip_address = $_SERVER['REMOTE_ADDR'] or die("IP Log Failed");
+        //Log some IP
+        date_default_timezone_set("Asia/Seoul");
+        $current_date = date("Y-m-d");
+        $current_time = date("h:i:sa");
+        
+
+        $username = "ADMIN";
+        $message = $_GET["chat"] or $skip = "activate";
+        
+        if($skip != "activate")
+        {
+        $chat = ("<span style=\"color:#2980b9\"><strong>[" . $username . "]</strong></span> " . $message . " <span style=\"font-size:8px\">" . $current_date . " " . $current_time . " at IP:" . $ip_address . "</span> <br> \n");
+        }
+    
+             
+        fwrite($chatter, $chat);
+        fclose($chatter);
+		//echo ("<br><br><br>if page doesn't redirect back to admin page, then, please use <a href=\"index.html\"> this link. </a>");	
+?>
+
 <html>
 
 <head>
     <meta charset=utf-8>
-    <title>ViCue Recoded - ADMIN Log</title>
+    <title>ViCue Recoded - ADMIN Chat</title>
     <link rel=stylesheet href=../css/foundation.css>
     <link rel=stylesheet href=../css/app.css>
     <script src="../js/jquery.js"></script>
@@ -41,12 +65,41 @@
     <div class=row>
         <div class="medium-12 columns" style=padding-bottom:10px>
             <div style=padding:10px;text-align:left;width:100%;background:#454545;color:#FFF>
-                <button class=menu-icon type=button data-open=offCanvasLeft></button>&nbsp;&nbsp;&nbsp; <span id=event_name>Loading...</span> - ViCue Recoded - Admin Log - <span id=clock>Current Time</span></div>
+                <button class=menu-icon type=button data-open=offCanvasLeft></button>&nbsp;&nbsp;&nbsp; <span id=event_name>Loading...</span> - ViCue Recoded - Admin Chat - <span id=clock>Current Time</span></div>
         </div>
     </div>
     <div class=row>
-        <div class="medium-12 columns" align=center style=color:#FFFFFF;>Log
-            <div class=log id=log align=left style="width: 100%; background-color: #333 !important; text-align: left !important; line-height: 15pt; font-size: 14pt; padding:10px; overflow-y:scroll; height:600px">Loading...</div>
+        <div class="medium-12 columns" align=center style=color:#FFFFFF;>Chat
+            <div class=chat id=chat align=left style="width: 100%; background-color: #333 !important; text-align: left !important; line-height: 15pt; font-size: 14pt; padding:10px; overflow-y:scroll; height:600px">Loading...</div>
+            <form name="chat" id="chat_send" action="">
+                <fieldset>
+                    <textarea name="chat" id="chat_type"></textarea>
+                    <input type="submit" id="submit" name="submit" class="alert button">
+                    <script>
+                        $(function() {
+                            $("#submit").click(function() {
+                                
+                                var chat = $("input#chat").val();
+                                var dataString = '&chat='+ chat;
+                                
+                                $.ajax({
+                                    type: "POST",
+                                    url: "chat.php",
+                                    data: dataString,
+                                    success: function() {
+                                    $( '#chat_send' ).each(function(){
+                                        this.reset();
+                                    });
+                                    
+                                    }
+                                });
+    
+                                });
+                            });
+                    </script>
+                </fieldset>
+                
+            </form>
         </div>
     </div>
     <br>
@@ -66,12 +119,10 @@
 	$(document).foundation();
 	</script>
 			
-	<script src="js/Log.js"></script>
+	<script src="js/chat.js"></script>
 			
 	<script>
-		var cue_data = document.getElementById("debug_cue").innerHTML;	
-		document.getElementById('cue_new').getAttributeNode("placeholder").value = cue_data;
-                CKEDITOR.replace( 'message_text' , {
+                CKEDITOR.replace( 'chat_type' , {
         enterMode : CKEDITOR.ENTER_BR,
         shiftEnterMode: CKEDITOR.ENTER_P,
         toolbarGroups: [
@@ -98,7 +149,9 @@
 
 
 	</script>
+    
 
+    
 </body>
 
 </html>

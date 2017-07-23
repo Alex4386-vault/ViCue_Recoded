@@ -51,9 +51,11 @@
     
         $ip_address = $_SERVER['REMOTE_ADDR'] or die("IP Log Failed");
         //Log some IP
+    
+        date_default_timezone_set("Asia/Seoul");
         $current_date = date("Y-m-d");
         $current_time = date("h:i:sa");
-        date_default_timezone_set("Asia/Seoul");
+        
         $log = ("<span style=\"color:#2980b9\"><strong>[PREPARATION]</strong>준비실 구역에서 이스터 에그가 구동되었습니다. </span> <span style=\"font-size:8px\">" . $current_date . " " . $current_time . " at IP:" . $ip_address . "</span> <br> \n");
     
              
