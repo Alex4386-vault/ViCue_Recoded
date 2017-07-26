@@ -65,23 +65,24 @@
     1. Admin Page **REQUIRES** PHP! Please download your httpd version of php
  1. go into your web server directory and put it everything in the directory (It is OK to use inside another directory since The Code itself is using relative path **except 404 page**)
  1. go to your web server config and prevent it from caching its data
-    1. If you are using apache, go to your httpd.conf and write 
-    ```
-    LoadModule headers_module modules/mod_headers.so
-    #If you have this already, then, just write the next part
-     <Directory yourdirectory(usually it is /)>
-       <filesMatch "\.(html|htm|js|css)$">
-       FileETag None
-           <ifModule mod_headers.c>
-           Header unset ETag
-           Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
-           Header set Pragma "no-cache"
-           Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
-           </ifModule>
-       </filesMatch>
-     </Directory>
-    ```
-    
+    1. If you are using apache,
+        1. go to your "apache directory/mods-enabled" and write 
+        
+            ```
+            <Directory yourdirectory(usually it is /)>
+                <filesMatch "\.(html|htm|js|css)$">
+                    FileETag None
+                    <ifModule mod_headers.c>
+                        Header unset ETag
+                        Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+                        Header set Pragma "no-cache"
+                        Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+                    </ifModule>
+                </filesMatch>
+            </Directory>
+            ```
+            
+        1. After doing that, type ```a2enmod headers``` and ```apache2 -k graceful``` to activate the new config.
       
     1. If you are using lighttpd, then.. (NOT TESTED)
     ```
@@ -145,21 +146,24 @@
  1. 웹서버 디렉토리로 (대개 /var/www/html/) 이동해 모든 파일을 옮겨 줍니다! (그 아래에 폴더 만들어서 그 안에 복사해도 됩니다 (상대경로 사용 **404 페이지 제외**))
  1. 캐싱을 막기위해 서버의 config를 수정해 줍니다
     1. apache서버(xampp) 는 httpd.conf에 
-    ```
-    LoadModule headers_module modules/mod_headers.so
-    #If you have this already, then, just write the next part
-     <Directory yourdirectory(usually it is /)>
-       <filesMatch "\.(html|htm|js|css)$">
-       FileETag None
-           <ifModule mod_headers.c>
-           Header unset ETag
-           Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
-           Header set Pragma "no-cache"
-           Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
-           </ifModule>
-       </filesMatch>
-     </Directory>
-    ```
+        1. "apache 설치 폴더 (대개 /etc/apache2)/mods-enabled" 에서 다음 내용을 작성하세요 
+        
+            ```
+            <Directory yourdirectory(usually it is /)>
+                <filesMatch "\.(html|htm|js|css)$">
+                    FileETag None
+                    <ifModule mod_headers.c>
+                        Header unset ETag
+                        Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+                        Header set Pragma "no-cache"
+                        Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+                    </ifModule>
+                </filesMatch>
+            </Directory>
+            ```
+            
+        1. 그런뒤에, ```a2enmod headers``` 와 ```apache2 -k graceful```를 쳐서 새 컨피그를 로드 합니다.
+      
     
       
     1. lighttpd 쓰신다면, (시험해보지 않음)
