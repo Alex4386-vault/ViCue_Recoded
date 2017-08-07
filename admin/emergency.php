@@ -70,23 +70,10 @@
         date_default_timezone_set("Asia/Seoul");
         $current_date = date("Y-m-d");
         $current_time = date("h:i:sa");
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         $log = ("<span style=\"color:#2980b9\"><strong>[ADMIN]</strong></span> <strong><span style=\"color:#e74c3c\">비상! </span>관리자 구역</strong>에서&nbsp;비상사태가 발생했습니다! <span style=\"font-size:8px\">" . $current_date . " " . $current_time . " at IP:" . $ip_address . "</span> <br> \n");
-=======
-        $log = ("<span style=\"color:#2980b9\"><strong>[ADMIN]</strong></span> <strong><span style=\"color:#e74c3c\">비상! </span>관리자 구역</strong>에서&nbsp;<br />비상사태가 발생했습니다! <span style=\"font-size:8px\">" . $current_date . " " . $current_time . " at IP:" . $ip_address . "</span> <br> \n");
->>>>>>> 3670849... Xtreme update, Huh?
-=======
-        $log = ("<span style=\"color:#2980b9\"><strong>[ADMIN]</strong></span> <strong><span style=\"color:#e74c3c\">비상! </span>관리자 구역</strong>에서&nbsp;비상사태가 발생했습니다! <span style=\"font-size:8px\">" . $current_date . " " . $current_time . " at IP:" . $ip_address . "</span> <br> \n");
->>>>>>> bbf4616... [Censored]
-=======
-        $log = ("<span style=\"color:#2980b9\"><strong>[ADMIN]</strong></span> <strong><span style=\"color:#e74c3c\">비상! </span>관리자 구역</strong>에서&nbsp;비상사태가 발생했습니다! <span style=\"font-size:8px\">" . $current_date . " " . $current_time . " at IP:" . $ip_address . "</span> <br> \n");
->>>>>>> 8ba7766... [Censored]
-=======
-        $log = ("<span style=\"color:#2980b9\"><strong>[ADMIN]</strong></span> <strong><span style=\"color:#e74c3c\">비상! </span>관리자 구역</strong>에서&nbsp;비상사태가 발생했습니다! <span style=\"font-size:8px\">" . $current_date . " " . $current_time . " at IP:" . $ip_address . "</span> <br> \n");
->>>>>>> 9dbe8ad... KIRA KIRA DIAMONDO
+
+        
             
         fwrite($logger, $log);
         echo ("Successfully Logged. ");
