@@ -1,5 +1,6 @@
 # ViCue Recoded
  - Idea by Sean Kim
+ - Major Update might be comming soon.
  - UX Design by 문보건(moonbogun@naver.com)
  - Special Thanks to...
     
