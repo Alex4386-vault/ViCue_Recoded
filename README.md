@@ -1,4 +1,5 @@
 # ViCue Recoded
+## ViCue recoded will get a major update on new repository, [Alex4386/ViCue7](https://github.com/Alex4386/ViCue7)
  - Idea by Sean Kim
  - Major Update might be comming soon.
  - UX Design by 문보건(moonbogun@naver.com)
